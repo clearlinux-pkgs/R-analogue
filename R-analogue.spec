@@ -4,17 +4,13 @@
 #
 Name     : R-analogue
 Version  : 0.17.1
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/analogue_0.17-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/analogue_0.17-1.tar.gz
 Summary  : Analogue and Weighted Averaging Methods for Palaeoecology
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-analogue-lib = %{version}-%{release}
-Requires: R-brglm
-Requires: R-princurve
-Requires: R-vegan
-Requires: R-withr
 BuildRequires : R-brglm
 BuildRequires : R-princurve
 BuildRequires : R-vegan
@@ -22,8 +18,9 @@ BuildRequires : R-withr
 BuildRequires : buildreq-R
 
 %description
-function models for prediction of environmental data from species 
-	     data, and related methods used in palaeoecology.
+# analogue
+#### Released version
+[![CRAN version](http://www.r-pkg.org/badges/version/analogue)](https://cran.r-project.org/package=analogue) [![](http://cranlogs.r-pkg.org/badges/grand-total/analogue)](https://cran.r-project.org/package=analogue)
 
 %package lib
 Summary: lib components for the R-analogue package.
@@ -41,10 +38,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1540465275
+export SOURCE_DATE_EPOCH=1552711082
 
 %install
-export SOURCE_DATE_EPOCH=1540465275
+export SOURCE_DATE_EPOCH=1552711082
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -80,8 +77,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library analogue|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  analogue || :
 
 
 %files
@@ -131,7 +127,11 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/analogue/help/paths.rds
 /usr/lib64/R/library/analogue/html/00Index.html
 /usr/lib64/R/library/analogue/html/R.css
-/usr/lib64/R/library/analogue/libs/symbols.rds
+/usr/lib64/R/library/analogue/tests/Examples/analogue-Ex.Rout.save
+/usr/lib64/R/library/analogue/tests/test-all.R
+/usr/lib64/R/library/analogue/tests/testthat/test-analog.R
+/usr/lib64/R/library/analogue/tests/testthat/test-new-distance.R
+/usr/lib64/R/library/analogue/tests/testthat/test-tran.R
 
 %files lib
 %defattr(-,root,root,-)
