@@ -4,14 +4,18 @@
 #
 Name     : R-analogue
 Version  : 0.17.1
-Release  : 20
+Release  : 21
 URL      : https://cran.r-project.org/src/contrib/analogue_0.17-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/analogue_0.17-1.tar.gz
 Summary  : Analogue and Weighted Averaging Methods for Palaeoecology
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-analogue-lib = %{version}-%{release}
+Requires: R-Rcpp
+Requires: R-permute
+BuildRequires : R-Rcpp
 BuildRequires : R-brglm
+BuildRequires : R-permute
 BuildRequires : R-princurve
 BuildRequires : R-vegan
 BuildRequires : R-withr
@@ -38,10 +42,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552711082
+export SOURCE_DATE_EPOCH=1556498706
 
 %install
-export SOURCE_DATE_EPOCH=1552711082
+export SOURCE_DATE_EPOCH=1556498706
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -77,7 +81,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  analogue || :
+R CMD check --no-manual --no-examples --no-codoc analogue || :
 
 
 %files
