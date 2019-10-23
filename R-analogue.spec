@@ -4,16 +4,14 @@
 #
 Name     : R-analogue
 Version  : 0.17.3
-Release  : 24
+Release  : 25
 URL      : https://cran.r-project.org/src/contrib/analogue_0.17-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/analogue_0.17-3.tar.gz
 Summary  : Analogue and Weighted Averaging Methods for Palaeoecology
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-analogue-lib = %{version}-%{release}
-Requires: R-Rcpp
 Requires: R-brglm
-Requires: R-permute
 Requires: R-princurve
 Requires: R-vegan
 BuildRequires : R-Rcpp
@@ -21,7 +19,9 @@ BuildRequires : R-brglm
 BuildRequires : R-permute
 BuildRequires : R-princurve
 BuildRequires : R-vegan
+BuildRequires : R-withr
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 # analogue
@@ -43,13 +43,13 @@ lib components for the R-analogue package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1557686426
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1571795715
 
 %install
-export SOURCE_DATE_EPOCH=1557686426
+export SOURCE_DATE_EPOCH=1571795715
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -78,7 +78,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
