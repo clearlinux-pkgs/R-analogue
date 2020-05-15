@@ -4,7 +4,7 @@
 #
 Name     : R-analogue
 Version  : 0.17.4
-Release  : 29
+Release  : 30
 URL      : https://cran.r-project.org/src/contrib/analogue_0.17-4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/analogue_0.17-4.tar.gz
 Summary  : Analogue and Weighted Averaging Methods for Palaeoecology
@@ -20,9 +20,8 @@ BuildRequires : R-vegan
 BuildRequires : buildreq-R
 
 %description
-# analogue
-#### Released version
-[![CRAN version](http://www.r-pkg.org/badges/version/analogue)](https://cran.r-project.org/package=analogue) [![](http://cranlogs.r-pkg.org/badges/grand-total/analogue)](https://cran.r-project.org/package=analogue)
+function models for prediction of environmental data from species 
+	     data, and related methods used in palaeoecology.
 
 %package lib
 Summary: lib components for the R-analogue package.
@@ -34,21 +33,22 @@ lib components for the R-analogue package.
 
 %prep
 %setup -q -c -n analogue
+cd %{_builddir}/analogue
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1581050882
+export SOURCE_DATE_EPOCH=1589584050
 
 %install
-export SOURCE_DATE_EPOCH=1581050882
+export SOURCE_DATE_EPOCH=1589584050
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
