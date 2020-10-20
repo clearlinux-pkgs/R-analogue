@@ -4,7 +4,7 @@
 #
 Name     : R-analogue
 Version  : 0.17.5
-Release  : 32
+Release  : 33
 URL      : https://cran.r-project.org/src/contrib/analogue_0.17-5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/analogue_0.17-5.tar.gz
 Summary  : Analogue and Weighted Averaging Methods for Palaeoecology
