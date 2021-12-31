@@ -4,7 +4,7 @@
 #
 Name     : R-analogue
 Version  : 0.17.6
-Release  : 45
+Release  : 46
 URL      : https://cran.r-project.org/src/contrib/analogue_0.17-6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/analogue_0.17-6.tar.gz
 Summary  : Analogue and Weighted Averaging Methods for Palaeoecology
@@ -40,10 +40,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1640887419
+export SOURCE_DATE_EPOCH=1640969880
 
 %install
-export SOURCE_DATE_EPOCH=1640887419
+export SOURCE_DATE_EPOCH=1640969880
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
