@@ -1,5 +1,5 @@
 PKG_NAME := R-analogue
-URL = https://cran.r-project.org/src/contrib/analogue_0.17-7.tar.gz
+URL = https://ftp.osuosl.org/pub/cran/src/contrib/analogue_0.18.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
